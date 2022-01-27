@@ -1,12 +1,18 @@
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Table} from 'react-bootstrap';
+import {Table, Container} from 'react-bootstrap';
 
 function Show (){
-    const [pets, setPets] = useState([]);
+    const [pets, setPets] = useState([
+      {id: 1, nome: "bento", tipo: "gato"},
+      {id: 1, nome: "bento", tipo: "gato"},
+      {id: 1, nome: "bento", tipo: "gato"},
+      {id: 1, nome: "bento", tipo: "gato"}]);
 
     return(
         <div>
+          <Container> 
+          <h4 className="mt-5 p-3 rounded">Lista de Pets</h4>
             <Table striped bordered hover size="sm">
                 <thead>
                   <tr>
@@ -27,6 +33,7 @@ function Show (){
               })}
                 </tbody>
               </Table>
+            </Container>
         </div>
     )
 }

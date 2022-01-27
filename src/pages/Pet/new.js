@@ -66,7 +66,6 @@ function New() {
                           </Form>
                       </Col>
                   </Row>
-                  <h6 className="mt-5 p-5 text-center text-secondary ">Copyright © 2022 bento's. Todos os direitos reservados.</h6>
               </Container>
     </div>
   );
