@@ -4,7 +4,7 @@ import {Form, Button, Container, Row, Col, Table} from 'react-bootstrap';
 
 
 function New() {
-  const [tipo, setTipo] = useState([{tipo: 'Gato'}, {tipo: 'Cachorro'}, {tipo: 'Coelho'}, {tipo: 'Passaro'}]);
+  const [tipo, setTipo] = useState(['Gato', 'Cachorro', 'Coelho', 'Passaro']);
   const [tipoSelecionado, setTipoSelecionado] = useState('');
   const [nome, setNome] = useState('');
   const [pets, setPets] = useState([]);
@@ -21,6 +21,7 @@ function New() {
 
   function handleSubmit(e){
     e.preventDefault();
+
     setPets([...pets,
       {
       id: new Date().getTime(),
@@ -28,12 +29,12 @@ function New() {
       tipo: tipoSelecionado}
     ]);
 
-    let pestSalvos = [];
-    pestSalvos.push(pets);
-    localStorage.setItem('pets', JSON.stringify(pestSalvos));
+    
+    localStorage.setItem('pets', JSON.stringify(pets));
+    console.log('pet salvo');
 
-    setTipoSelecionado(0);
-    setNome('');
+     setTipoSelecionado(0);
+     setNome('');
   }
   return (
     <div>
@@ -49,8 +50,8 @@ function New() {
                                <option>Selecione um tipo</option>
                                 {tipo.map((item, index)=>{
                                   return(
-                                    <option key={item.id}>
-                                       {item.tipo}
+                                    <option key={item}>
+                                       {item}
                                     </option>
                                   )
                                 })}
