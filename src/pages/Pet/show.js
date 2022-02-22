@@ -8,19 +8,17 @@ function Show (){
     useEffect(()=>{
       const lista = localStorage.getItem('pets');
       setPets(JSON.parse(lista));
-      console.log(pets)
+      console.log(pets);
     },[]);
 
     function handleDelete(id){
-
-      // implementar excluir pet do localStorage
-
-
-    //   for (var i = 0; i < pets.length; i++) {
-    //     if(pets[i] === id){
-    //       localStorage.removeItem('pets', i);
-    //     }
-    // }
+      console.log(id)
+       for (var i = 0; i < pets.length; i++) {
+         if(pets[i].id === id){
+          console.log(pets[i])
+          localStorage.removeItem('pets[i]');
+      }
+     }
     }
    
     return(
