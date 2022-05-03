@@ -27,8 +27,8 @@ function Show (){
           
           <h4 className="mt-5 p-3 rounded">Lista de Pets</h4>
           
-          {pets.length === 0 && <h6 className='mt-2'>Você não possui nenhum pet cadastrato</h6>}
-
+          {pets.length === 0 ? <h6 className='mt-2'>Você não possui nenhum pet cadastrato</h6>
+              :  
             <Table striped bordered hover size="sm">
                 <thead>
                   <tr>
@@ -57,7 +57,9 @@ function Show (){
               })}
                 </tbody>
               </Table>
+}
             </Container>
+
         </div>
     )
 }
